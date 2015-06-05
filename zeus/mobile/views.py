@@ -1,11 +1,12 @@
-__author__ = 'xujunjian'
-
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import Context, loader
+
+__author__ = 'JunJianSyu'
 
 def index(request):
-    #return HttpResponse('hello junjian')
-    content = {
-        'title': '123',
-    }
-    return render(request, 'index.html', content)
+    template = loader.get_template('index.html')
+    context = Context({
+        'request': request,
+        'title': 'JunJianSyu',
+    })
+    return HttpResponse(template.render(context))

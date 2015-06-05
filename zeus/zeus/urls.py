@@ -1,8 +1,7 @@
 from django.conf.urls import patterns, include, url
+from mobile.views import index
 
 __author__ = 'JunJianSyu'
-
-from mobile.views import index
 
 urlpatterns = patterns(
     '',
